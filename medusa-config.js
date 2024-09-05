@@ -42,7 +42,10 @@ const plugins = [
 	},
 	{
 		resolve: '@rigby-software-house/mercurjs-vendor',
-		options: {},
+		options: {
+      autoRebuild: true,
+      // other options...
+    },
 	},
 	{
 		resolve: '@medusajs/admin',
