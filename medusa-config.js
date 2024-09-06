@@ -34,12 +34,15 @@ const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
 const plugins = [
 	`medusa-fulfillment-manual`,
 	`medusa-payment-manual`,
-	{
-		resolve: `@medusajs/file-local`,
+          {
+		resolve: `medusa-file-cloudinary`,
 		options: {
-			upload_dir: 'uploads',
+			cloud_name: "ds9m9dhka",
+			api_key: process.env.CLOUDINARY_API_KEY,
+			api_secret: process.env.CLOUDINARY_API_SECRET,
+			secret: true,
 		},
-	},
+	   },
 	{
 		resolve: '@rigby-software-house/mercurjs-vendor',
 		options: {
